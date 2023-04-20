@@ -31,8 +31,6 @@ export class JwLibrary {
         } else {
             this.device = "pc";
         }
-
-        console.log(this.device, this.browser)
     }
 }
 

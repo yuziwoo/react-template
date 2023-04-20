@@ -7,12 +7,8 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 
 function App() {
 
-  useEffect(() => {
-    window.jw = new JwLibrary();
-    return () => {
-      window.jw = undefined;
-    }
-  }, [])
+  window.jw = new JwLibrary();
+  
   return (
     <div className="App">
       <Routes>
