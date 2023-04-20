@@ -1,10 +1,14 @@
 export class JwLibrary {
     constructor() {
-        this.device = ""; // mobile, pc
+        this.device = ""; // mob, pc
         this.browser = ""; // Chorme, Firefox, Safari, Opera, Edge, Android, iPhone
-        this.getBrowser();
 
+        let body = document.getElementById("root");
+        this.getBrowser();
+        body.classList.add(`device-${this.device}`); // mob, pc 환경을 구분하여 root element에 class 추가
+        // jw-pc, jw-mob 클래스를 이용하여 원하는 환경에서만 요소가 보일 수 있도록 작성해보세요.
     }
+
     getBrowser() {
         let userAgent = navigator.userAgent;
 
@@ -27,7 +31,7 @@ export class JwLibrary {
         }
 
         if (userAgent.match(/Android/i) || userAgent.match(/webOS/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i) || userAgent.match(/BlackBerry/i) || userAgent.match(/Windows Phone/i)) {
-            this.device = "mobile";
+            this.device = "mob";
         } else {
             this.device = "pc";
         }

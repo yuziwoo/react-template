@@ -1,0 +1,6 @@
+.device-pc .jw-mob {
+    display: none!important;
+}
+.device-mob .jw-pc {
+    display: none!important;
+}
