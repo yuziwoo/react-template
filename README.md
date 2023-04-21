@@ -24,3 +24,10 @@
 console.log(jw.device); // mobile, pc
 console.log(jw.browser); // Chorme, Firefox, Safari, Opera, Edge, Android, iPhone
 ```
+
+ 2. ** 반응형 사이즈 CSS 규정. **
+ - PC : max-width: 1920px; min-width: 768px;
+ - MOB : max-width: 1080px;
+ - PC 디자인은 1920px 기준이며 1rem을 12px로 지정하였습니다.
+ - MOB 디자인은 1080px 기준이며 1rem을 12px로 지정하였습니다. 
+ - 즉, 디자인상 1080px에서 48px의 폰트 크기를 가졌다면 4rem으로 설정해주세요.
