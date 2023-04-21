@@ -14,7 +14,7 @@ html {
 }
 
 
-/* 초기화 */
+/* 초기화 : body min-width : 320px */
 * {margin:0;padding:0;box-sizing:border-box;color:inherit;flex-shrink:0;vertical-align: baseline;border:0;line-height:1.5;font-weight: 400;}
 html {-moz-text-size-adjust: 100%;-o-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;text-size-adjust: 100%;font-size: 106.25%;line-height: 1.52632;height:100%;}
 body {min-width: 320px;}

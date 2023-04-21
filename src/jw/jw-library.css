@@ -1,6 +1,67 @@
+/* device에 따라 display on-off */
 .device-pc .jw-mob {
     display: none!important;
 }
 .device-mob .jw-pc {
     display: none!important;
+}
+
+/* 사이즈 규정 */ 
+/* 1. pc에선 min-width: 768px; */
+.device-pc {
+    max-width: 1920px;
+    min-width: 768px;
+}
+.device-mob {
+    max-width: 1080px;
+}
+
+/* 2. Font-size 규정 
+ - PC 1rem 12px로 지정
+ - MOB 디자인은 1080px 기준으로 1rem 12px 지정하여, 디자인 1080기준 48px이라면 4rem으로 설정해주세요.
+ - 참고로 폰트 크기는 10px이 최소값이므로 너무 크기가 작으면 반응형으로 줄지 않습니다.
+*/
+
+html {
+    font-size: 0.625vw; /* == width 1920 기준 12px */
+}
+
+@media screen and (min-width: 1920px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+html * {
+    font-size: 1.333333333333rem;
+}
+.font72 {
+    font-size: 6rem;
+}
+.font60 {
+    font-size: 5rem;
+}
+.font48 {
+    font-size: 4rem;
+}
+.font36 {
+    font-size: 3rem;
+}
+.font24 {
+    font-size: 2rem;
+}
+.font18 {
+    font-size: 1.5rem;
+}
+.font14 {
+    font-size: 1.16666666666rem;
+}
+.font12 {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1080px) {
+    html {
+        font-size: 0.83333333vw;
+    }
 }

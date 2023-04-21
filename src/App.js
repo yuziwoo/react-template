@@ -8,7 +8,7 @@ import { Routes, Route, Link, useNavigate } from "react-router-dom";
 function App() {
 
   window.jw = new JwLibrary();
-  
+
   return (
     <div className="App">
       <Routes>
@@ -16,7 +16,7 @@ function App() {
         <Route path="/about" element={<Link to="/">메인페이지로 이동</Link>} />
       </Routes>
       <main className="jw">
-
+        <p>hi</p>
       </main>
     </div>
   );
