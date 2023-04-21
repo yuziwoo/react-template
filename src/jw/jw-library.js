@@ -7,6 +7,8 @@ export class JwLibrary {
         this.getBrowser();
         body.classList.add(`device-${this.device}`); // mob, pc 환경을 구분하여 root element에 class 추가
         // jw-pc, jw-mob 클래스를 이용하여 원하는 환경에서만 요소가 보일 수 있도록 작성해보세요.
+
+        this.reset();
     }
 
     getBrowser() {
@@ -35,6 +37,10 @@ export class JwLibrary {
         } else {
             this.device = "pc";
         }
+    }
+
+    reset() {
+        
     }
 }
 
