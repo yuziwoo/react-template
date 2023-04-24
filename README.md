@@ -16,7 +16,7 @@
 > 3. 라이브러리 사용을 위해 변수에 new JwLibrary()를 생성하여 시작해주세요. (기본값: window.jw = new JwLibrary();)
 
 
- ### 기능 :cookie:
+ ### 기능 (property) :cookie:
  1. **클라이언트의 접속 환경을 확인합니다.**
  - HTML root Element에 `device-pc, device-mob` 클래스가 적용됩니다.
  - `jw-pc, jw-mob` 클래스를 이용하면 원하는 환경에서만 요소가 보입니다.
@@ -31,3 +31,14 @@ console.log(jw.browser); // Chorme, Firefox, Safari, Opera, Edge, Android, iPhon
  - PC 디자인은 1920px 기준이며 1rem을 12px로 지정하였습니다.
  - MOB 디자인은 1080px 기준이며 1rem을 12px로 지정하였습니다. 
  - 즉, 디자인상 1080px에서 48px의 폰트 크기를 가졌다면 4rem으로 설정해주세요.
+
+ ### 기능 (method) :cookie:
+  1. ** cutText(텍스트, 글자 수) **
+  - 텍스트의 글자 수에 리밋을 두고, 초과되는 값은 ...으로 바꾸어 리턴합니다.
+```javascript
+// example
+let name = "동해물과 백두산이 마르고 닳도록";
+console.log(cutText(name, 10));
+
+// 동해물과 백두산이...
+```
