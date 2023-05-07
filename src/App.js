@@ -1,23 +1,27 @@
+/* eslint-disable */
 import './css/reset.css';
 import './jw/jw-library.css';
-import { JwLibrary } from './jw/jw-library.js';
 
-import {useState, useEffect} from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Routes, Route, Link, useNavigate, useParams } from "react-router-dom";
+
+import Main from "./routes/Main.js";
 
 function App() {
+  let store = useSelector((state) => { return state });
+  let dispatch = useDispatch();
 
-  window.jw = new JwLibrary();
+  useEffect(() => {
+    jw.onStart();
+    return () => {
+      jw.onEnd();
+    }
+  }, [store.jwState])
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<Link to="/about">어바웃페이지로 이동</Link>} />
-        <Route path="/about" element={<Link to="/">메인페이지로 이동</Link>} />
-      </Routes>
-      <main className="jw">
-        <p>hi</p>
-      </main>
+      <Main/>
     </div>
   );
 }

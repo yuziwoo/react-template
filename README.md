@@ -11,9 +11,16 @@
 
 
 > ### 내용
+> 0. "react": "^18.2.0", "react-dom": "^18.2.0"
 > 1. src/css/reset.css 파일에서 기본 초기화를 진행하였습니다.
 > 2. src/js/jw-library.js 파일에서 class JwLibrary를 export하고 있습니다.
 > 3. 라이브러리 사용을 위해 변수에 new JwLibrary()를 생성하여 시작해주세요. (기본값: window.jw = new JwLibrary();)
+
+
+> ### 설치된 라이브러리
+> 1. npm install react-router-dom@6
+> 2. npm install @reduxjs/toolkit react-redux
+> 3. npm install axios
 
 
  ### 기능 (property) :cookie:
