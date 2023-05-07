@@ -5,5 +5,15 @@ header {
 }
 
 header p {
+  opacity: 0.7;
+  transition: all 0.3s;
   cursor: pointer;
+}
+
+header p:hover {
+  opacity: 1;
+}
+
+header .active {
+  opacity: 1;
 }

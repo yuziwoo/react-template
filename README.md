@@ -23,6 +23,9 @@
 > 3. npm install axios
 > 4. typescript npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 
+ ### 기본 컴포넌트 :cookie:
+ 1. **Header**
+ - URL 첫번째 path에 반응하는 Header가 추가되어 있습니다.
 
  ### 기능 (property) :cookie:
  1. **클라이언트의 접속 환경을 확인합니다.**

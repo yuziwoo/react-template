@@ -1,4 +1,4 @@
-import "../css/Header.module.css";
+import "../css/Header.css";
 
 function Header(props) {
   let store = props.store;
