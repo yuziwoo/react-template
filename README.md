@@ -14,7 +14,7 @@
 > 0. "react": "^18.2.0", "react-dom": "^18.2.0"
 > 1. src/css/reset.css 파일에서 기본 초기화를 진행하였습니다.
 > 2. src/js/jw-library.js 파일에서 class JwLibrary를 export하고 있습니다.
-> 3. 라이브러리 사용을 위해 변수에 new JwLibrary()를 생성하여 시작해주세요. (기본값: window.jw = new JwLibrary();)
+> 3. 컨텐츠를 재랜더링하게되면 dispatch(resetJW()); 해주세요.
 
 
 > ### 설치된 라이브러리
@@ -25,11 +25,12 @@
 
  ### 기능 (property) :cookie:
  1. **클라이언트의 접속 환경을 확인합니다.**
- - HTML root Element에 `device-pc, device-mob` 클래스가 적용됩니다.
+ - HTML root Element에 `device-pc, device-mob` 클래스가 적용되며, 화면의 orientation에 따라서 "landscape", "portrait" 클래스가 적용됩니다.
  - `jw-pc, jw-mob` 클래스를 이용하면 원하는 환경에서만 요소가 보입니다.
 ```javascript
 console.log(jw.device); // mobile, pc
 console.log(jw.browser); // Chorme, Firefox, Safari, Opera, Edge, Android, iPhone
+console.log(jw.orientation); // landscpae(가로), portrait(세로)
 ```
 
  2. **반응형 사이즈 CSS 규정.**
