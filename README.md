@@ -21,6 +21,7 @@
 > 1. npm install react-router-dom@6
 > 2. npm install @reduxjs/toolkit react-redux
 > 3. npm install axios
+> 4. typescript npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 
 
  ### 기능 (property) :cookie:

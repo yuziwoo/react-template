@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 let jwState = createSlice({
   name: "jwState",
-  initialState: 0,
+  initialState: `/${document.URL.split("/")[3].trim()}`,
   reducers: {
-    resetJW(state) {
-      return state == 0 ? 1 : 0;
+    resetJW(state, action) {
+      return action.payload;
     }
   }
 })

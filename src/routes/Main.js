@@ -1,18 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
-import { resetJW } from "./../store/jwSlice.js";
-
 function Main(props) {
-  let store = useSelector((state) => { return state })
-  let dispatch = useDispatch();
+  let store = props.store;
 
   return (
-    <main className="jw">
-      <button onClick={() => {
-        dispatch(resetJW());
-      }}>
-        컨텐츠 리로드
-      </button>
-    </main>
+    <>
+      <h1>여기는 Main</h1>
+    </>
   )
 }
 
