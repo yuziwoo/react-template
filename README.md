@@ -1,6 +1,6 @@
-# react-template
+# React-Template
 
-## 다양한 리엑트 프로젝트 개발을 위한 템플릿입니다. :butterfly:
+### 다양한 리엑트 프로젝트 개발을 위한 템플릿입니다. :butterfly:
 <br>
 
 
@@ -25,13 +25,13 @@
 
 <br>
 
-### 기본 컴포넌트 :cookie:
+## 기본 컴포넌트 :cookie:
 1. **Header**
 - URL 첫번째 path에 반응하는 Header가 추가되어 있습니다.
 
 <br><br>
 
-### 기능. Property :cookie:
+## 기능. Property :cookie:
 1. **클라이언트의 접속 환경을 확인합니다.**
 - HTML root Element에 `device-pc, device-mob` 클래스가 적용되며, 화면의 orientation에 따라서 "landscape", "portrait" 클래스가 적용됩니다.
 > - `jw-pc, jw-mob` 클래스를 이용하면 원하는 환경에서만 요소가 보입니다.
@@ -53,7 +53,7 @@ console.log(jw.orientation); // landscpae(가로), portrait(세로)
 
 <br><br>
 
-### 기능. Method :cookie:
+## 기능. Method :cookie:
 1. **cutText(텍스트, 글자 수)**
 - 텍스트의 글자 수에 리밋을 두고, 초과되는 값은 ...으로 바꾸어 리턴합니다.
 ```javascript
@@ -64,7 +64,7 @@ console.log(cutText(name, 10)); // == 동해물과 백두산이...
 
 <br><br>
 
-### 기능. CSS - 1. Text :cookie:
+## 기능. CSS - 1. Text :cookie:
 1. **.line-clamp**
 - 텍스트를 몇 줄까지 표시할지를 정합니다. 초과되는 값은 ...으로 바뀌어 표현됩니다.
 - .line-clamp1 .line-clamp2 ~ .line-clamp5 까지 있습니다.
@@ -86,7 +86,7 @@ console.log(cutText(name, 10)); // == 동해물과 백두산이...
 
 <br><br>
 
-### 기능. CSS - 2. Animation :cookie:
+## 기능. CSS - 2. Animation :cookie:
 1. **animation-hue**
 - filter: hue-rotate 애니메이션 입니다.
 ```css
