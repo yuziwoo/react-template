@@ -36,6 +36,7 @@
 - HTML root Element에 `device-pc, device-mob` 클래스가 적용되며, 화면의 orientation에 따라서 "landscape", "portrait" 클래스가 적용됩니다.
 > - `jw-pc, jw-mob` 클래스를 이용하면 원하는 환경에서만 요소가 보입니다.
 ```javascript
+// 사용 예시
 console.log(jw.device); // mobile, pc
 console.log(jw.browser); // Chorme, Firefox, Safari, Opera, Edge, Android, iPhone
 console.log(jw.orientation); // landscpae(가로), portrait(세로)
@@ -56,11 +57,9 @@ console.log(jw.orientation); // landscpae(가로), portrait(세로)
 1. **cutText(텍스트, 글자 수)**
 - 텍스트의 글자 수에 리밋을 두고, 초과되는 값은 ...으로 바꾸어 리턴합니다.
 ```javascript
-// example
+// 사용 예시
 let name = "동해물과 백두산이 마르고 닳도록";
-console.log(cutText(name, 10));
-
-// 동해물과 백두산이...
+console.log(cutText(name, 10)); // == 동해물과 백두산이...
 ```
 
 <br><br>
@@ -69,7 +68,8 @@ console.log(cutText(name, 10));
 1. **.line-clamp**
 - 텍스트를 몇 줄까지 표시할지를 정합니다. 초과되는 값은 ...으로 바뀌어 표현됩니다.
 - .line-clamp1 .line-clamp2 ~ .line-clamp5 까지 있습니다.
- ```css
+```css
+/* CSS 내용 */
  .line-clamp2 {
     width: 100%;
     display: -webkit-box;
@@ -78,17 +78,19 @@ console.log(cutText(name, 10));
     -webkit-line-clamp: 2;
     overflow: hidden;
 }
- ```
- ```html
- <p class="line-clamp2">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이 보전하세</p>
- ```
+```
+```html
+<!-- 적용 예시 -->
+<p class="line-clamp2">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이 보전하세</p>
+```
 
 <br><br>
 
 ### 기능. CSS - 2. Animation :cookie:
 1. **animation-hue**
 - filter: hue-rotate 애니메이션 입니다.
- ```css
+```css
+/* CSS 내용 */
  .animation-hue {
     animation: bg-hue-animation 10s infinite;
 }
