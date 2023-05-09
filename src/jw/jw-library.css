@@ -66,6 +66,7 @@ html * {
     }
 }
 
+/* 텍스트 줄 제한 */
 .line-clamp1 {
     width: 100%;
     display: -webkit-box;
@@ -105,4 +106,21 @@ html * {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
     overflow: hidden;
+}
+
+/* hue-rotate animation */
+.animation-hue {
+    animation: bg-hue-animation 10s infinite;
+}
+
+@keyframes bg-hue-animation {
+    0% {
+        filter: hue-rotate(0deg)
+    }
+    50% {
+        filter: hue-rotate(180deg)
+    }
+    100% {
+        filter: hue-rotate(0deg)
+    }
 }
