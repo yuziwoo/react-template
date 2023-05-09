@@ -54,3 +54,21 @@ console.log(cutText(name, 10));
 
 // 동해물과 백두산이...
 ```
+
+ ### 기능 CSS Class
+ 1. **.line-clamp**
+ - 텍스트를 몇 줄까지 표시할지를 정합니다. 초과되는 값은 ...으로 바뀌어 표현됩니다.
+ - .line-clamp1 .line-clamp2 ~ .line-clamp5 까지 있습니다.
+ ```css
+ .line-clamp2 {
+    width: 100%;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+ ```
+ ```html
+ <p class="line-clamp2">동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세 무궁화 삼천리 화려 강산 대한사람 대한으로 길이 보전하세</p>
+ ```
