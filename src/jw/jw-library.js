@@ -77,6 +77,7 @@ export class JwLibrary {
         window.removeEventListener("scroll", this.bindScroll);
     }
 
+    // 텍스트 편집 (텍스트, max 텍스트 길이)
     cutText(text, limit) {
         if (text.length <= limit) {
             return text;
@@ -84,5 +85,29 @@ export class JwLibrary {
             return text.slice(0, limit).trim() + "...";
         }
     }
-}
 
+    // 남은 시간 구하기 (종료 시간, 시작 시간) / return {sec, min, hour, day};
+    /*
+    타이머 예시
+    let timer = () => {
+        setTimeout(() => {
+            console.log(jw.limitTimer(new Date(2023, 5, 13, 12)));
+            timer();
+        }, 1000);
+    }
+    timer()
+     */
+    limitTimer(end, start = new Date()) {
+        let base_sec = Math.floor((end - start) / 1000);
+        let base_min = Math.floor(base_sec / 60);
+        let base_hour = Math.floor(base_min / 60);
+        let day = Math.floor(base_hour / 24);
+
+        return {
+            sec: base_sec % 60,
+            min: base_min % 60,
+            hour: base_hour % 24,
+            day: day
+        }
+    }
+}

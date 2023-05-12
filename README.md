@@ -59,7 +59,21 @@ console.log(jw.orientation); // landscpae(가로), portrait(세로)
 ```javascript
 // 사용 예시
 let name = "동해물과 백두산이 마르고 닳도록";
-console.log(cutText(name, 10)); // == 동해물과 백두산이...
+console.log(jw.cutText(name, 10)); // == 동해물과 백두산이...
+```
+
+2. **limitTimer(타겟 시간, 시작 시간:기본값 = new Date())**
+- 타겟 시간까지 남은 시간을 객체 형식으로 리턴합니다.
+```javascript
+// 사용 예시
+let timer = () => {
+    setTimeout(() => {
+        console.log(jw.limitTimer(new Date(2023, 5, 13, 12)));
+        timer();
+    }, 1000);
+}
+timer();
+// return {sec: 00, min: 00, hour: 00, day: 00};
 ```
 
 <br><br>
