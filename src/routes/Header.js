@@ -24,7 +24,7 @@ function Header(props) {
             <p key={i} onClick={() => {
               props.navigate(v.navigate);
               props.resetJW(`/${document.URL.split("/")[3].trim()}`);
-            }} className={v.navigate == store.jwState ? "active" : null}>
+            }} className={v.navigate === store.jwState ? "active" : null}>
               { v.name }
             </p>
           )

@@ -50,13 +50,13 @@ export class JwLibrary {
 
     resize() {
         if (window.innerWidth >= window.innerHeight) {
-            if (this.orientation != "landscape") {
+            if (this.orientation !== "landscape") {
                 this.orientation = "landscape";
                 this.body.classList.remove("portrait");
                 this.body.classList.add("landscape");
             }
         } else {
-            if (this.orientation != "portrait") {
+            if (this.orientation !== "portrait") {
                 this.orientation = "portrait";
                 this.body.classList.remove("landscape");
                 this.body.classList.add("portrait");

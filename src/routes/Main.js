@@ -1,5 +1,5 @@
 function Main(props) {
-  let store = props.store;
+  // let store = props.store;
 
   return (
     <>

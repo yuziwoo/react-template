@@ -1,5 +1,5 @@
 function Content1(props) {
-  let store = props.store;
+  // let store = props.store;
   return (
     <>
       <h1>여기는 Content1</h1>
