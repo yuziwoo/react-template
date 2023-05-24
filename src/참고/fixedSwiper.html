@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- 요소가 2개 이하면 안됨 -->
     <main class="csl">
         <div class="swiper swiperFixed swiperFixedPure">
             <div class="swiper-wrapper">
@@ -62,73 +63,96 @@
     <script>
         {
             let el = document.getElementsByClassName("swiperFixed")[0];
-            let isPure = true;
-            let slideWrap = el.children[0];
+            if (el.children[0].children.length > 2) {
+                let isPure = true;
+                let slideWrap = el.children[0];
 
-            let aa = new Swiper(el, {
-                loop: true,
-                allowTouchMove: true,
-                speed: 1100,
-                slidesPerView: 1,
-                spaceBetween: 0,
-                effect: 'slide',
-                autoplay: {
-                    delay: 1100,
-                    disableOnInteraction: true,
-                },
-                hashNavigation: true,
-                hashNavigation: {
-                    replaceState: true,
-                },
-            })
+                let aa = new Swiper(el, {
+                    loop: true,
+                    allowTouchMove: true,
+                    speed: 1100,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    effect: 'slide',
+                    autoplay: {
+                        delay: 1100,
+                        disableOnInteraction: true,
+                    },
+                    hashNavigation: true,
+                    hashNavigation: {
+                        replaceState: true,
+                    },
+                })
 
-            let width = el.offsetWidth;
-            let l = el.children[0].children.length - 2;
-            let activeEl = el.children[0].getElementsByClassName("swiper-slide-active")[0];
-            let prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
-            let activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
-            let nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
-            let isTouching = false;
+                let width = el.offsetWidth;
+                let l = el.children[0].children.length - 2;
 
-            let autoplay = true;
-            aa.on('resize', () => {
-                width = el.offsetWidth;
-            })
-            aa.on('setTranslate', function(){
-                if (isTouching) {
-                    let x = this.getTranslate() + (this.activeIndex * width)
-                    prevImg.style.transform = `translateX(${width - x}px)`
-                    activeImg.style.transform = `translateX(${-x}px)`
-                    nextImg.style.transform = `translateX(${-width - x}px)`
-                }
-            })
-            aa.on('sliderFirstMove', () => {
-                if (isPure) {
-                    el.classList.remove("swiperFixedPure");
-                    isPure = false;
-                }
-                isTouching = true;
-                prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
-                activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
-                nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
-            })
-            aa.on('transitionStart', () => {
-                if (!isPure) {
-                    el.classList.add("swiperFixedMoving");
-                    isTouching = false;
+                let activeEl = el.children[0].getElementsByClassName("swiper-slide-active")[0];
+                let prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
+                let activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
+                let nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
+                let isTouching = false;
+
+                let autoplay = true;
+                aa.on('resize', () => {
+                    width = el.offsetWidth;
+                })
+                aa.on('setTranslate', function(){
+                    if (isTouching) {
+                        let x = this.getTranslate() + (this.activeIndex * width)
+                        prevImg.style.transform = `translateX(${width - x}px)`
+                        activeImg.style.transform = `translateX(${-x}px)`
+                        nextImg.style.transform = `translateX(${-width - x}px)`
+                    }
+                })
+                aa.on('sliderFirstMove', () => {
+                    if (isPure) {
+                        el.classList.remove("swiperFixedPure");
+                        isPure = false;
+                    }
+                    isTouching = true;
                     prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
                     activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
                     nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
-                    prevImg.style.transform = 'translateX(100%)';
-                    activeImg.style.transform = 'translateX(0%)';
-                    nextImg.style.transform = 'translateX(-100%)';
-                }
-            })
-            aa.on('transitionEnd', function(){
-                if (!isPure) {
-                    el.classList.remove("swiperFixedMoving");
-                }
-            })
+                })
+                aa.on('transitionStart', () => {
+                    if (!isPure) {
+                        el.classList.add("swiperFixedMoving");
+                        isTouching = false;
+                        prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
+                        activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
+                        nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
+                        prevImg.style.transform = 'translateX(100%)';
+                        activeImg.style.transform = 'translateX(0%)';
+                        nextImg.style.transform = 'translateX(-100%)';
+                    }
+                })
+                aa.on('transitionEnd', function(){
+                    if (!isPure) {
+                        el.classList.remove("swiperFixedMoving");
+                    }
+                })
+            } else {
+                let aa = new Swiper(el, {
+                    loop: true,
+                    allowTouchMove: true,
+                    speed: 1100,
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    effect: 'slide',
+                    autoplay: {
+                        delay: 1100,
+                        disableOnInteraction: true,
+                    },
+                    hashNavigation: true,
+                    hashNavigation: {
+                        replaceState: true,
+                    },
+                })
+                el.classList.remove("swiperFixed");
+                el.classList.remove("swiperFixedPure")
+            }
+            
         }
     </script>
 </body>
