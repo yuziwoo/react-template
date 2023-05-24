@@ -47,11 +47,11 @@ console.log(jw.orientation); // landscpae(가로), portrait(세로)
 - PC : max-width: 1920px; min-width: 768px;
 - MOB : max-width: 1080px;
 - PC 디자인은 1920px 기준이며 1rem을 12px로 지정하였습니다.
-> 웹 최소 폰트 사이즈 10px으로 인해 반응형 최소 폰트는 1.5rem (18px)입니다.
-> vw: 1920px, font-size: 18px == vw: 1080px, font-size: 10px
+> - 웹 최소 폰트 사이즈 10px으로 인해 반응형 최소 폰트는 1.5rem (18px)입니다.
+> - vw: 1920px, font-size: 18px == vw: 1080px, font-size: 10px
 - MOB 디자인은 1080px 기준이며 1rem을 12px로 지정하였습니다.
-> 앱 최소 폰트 사이즈 10px으로 인해 반응형 최소 폰트는 3.2rem (38.4px)입니다.
-> vw: 1080px, font-size: 38.4px == vw: 320px, font-size: 10px
+> - 앱 최소 폰트 사이즈 10px으로 인해 반응형 최소 폰트는 3.2rem (38.4px)입니다.
+> - vw: 1080px, font-size: 38.4px == vw: 320px, font-size: 10px
 - 즉, 디자인상 1080px에서 48px의 폰트 크기를 가졌다면 4rem으로 설정해주세요.
 
 <br><br>
