@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2203/swiper-bundle.min.css" />
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2671/swiper-bundle-min.js"></script>
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2830/csl.css">
+    <link rel="stylesheet" href="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2830/reset.min.css">
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2830/csl.js"></script>
+    <script src="https://dcodeimages1.s3.ap-northeast-1.amazonaws.com/2830/csl-event.js"></script>
+    <style>.csl {display: none;padding-top: 1000px;max-width: 720px;}</style>
+
+</head>
+
+<body>
+    <main class="csl">
+        <div class="swiper swiperFixed swiperFixedPure">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img data-name="c4-1.jpg"></div>
+                <div class="swiper-slide"><img data-name="c4-2.jpg"></div>
+                <div class="swiper-slide"><img data-name="c4-3.jpg"></div>
+                <div class="swiper-slide"><img data-name="c7-1.jpg"></div>
+                <div class="swiper-slide"><img data-name="c7-2.jpg"></div>
+                <div class="swiper-slide"><img data-name="c7-3.jpg"></div>
+            </div>
+        </div>
+        <br>
+    </main>
+
+    <script>csl = new ContentScriptLibrary(3179);</script>
+    <style>
+        .swiperFixed .swiper-slide {
+            overflow: hidden;
+        }
+        .swiperFixed .swiper-slide img {
+            display: block;
+        }
+        .swiperFixed .swiper-slide-prev img,
+        .swiperFixed .swiper-slide-active img,
+        .swiperFixed .swiper-slide-next img {
+            will-change: transform;
+        }
+        .swiperFixedPure .swiper-slide img,
+        .swiperFixedMoving .swiper-slide img {
+            will-change: auto;
+            display: block;
+            transition: all 1.1s;
+            transform: translateX(0);
+        }
+        .swiperFixedPure .swiper-slide-prev img,
+        .swiperFixedMoving .swiper-slide-prev img {
+            transform: translateX(100%);
+        }
+        .swiperFixedPure .swiper-slide-next img,
+        .swiperFixedMoving .swiper-slide-next img {
+            transform: translateX(-100%);
+        }
+        .swiperFixedPure .swiper-wrapper .swiper-slide-duplicate-active:nth-child(2) + .swiper-slide img {
+            transform: translateX(-100%);
+        }
+    </style>
+    <script>
+        {
+            let el = document.getElementsByClassName("swiperFixed")[0];
+            let isPure = true;
+            let slideWrap = el.children[0];
+
+            let aa = new Swiper(el, {
+                loop: true,
+                allowTouchMove: true,
+                speed: 1100,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                effect: 'slide',
+                autoplay: {
+                    delay: 1100,
+                    disableOnInteraction: true,
+                },
+                hashNavigation: true,
+                hashNavigation: {
+                    replaceState: true,
+                },
+            })
+
+            let width = el.offsetWidth;
+            let l = el.children[0].children.length - 2;
+            let activeEl = el.children[0].getElementsByClassName("swiper-slide-active")[0];
+            let prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
+            let activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
+            let nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
+            let isTouching = false;
+
+            let autoplay = true;
+            aa.on('resize', () => {
+                width = el.offsetWidth;
+            })
+            aa.on('setTranslate', function(){
+                if (isTouching) {
+                    let x = this.getTranslate() + (this.activeIndex * width)
+                    prevImg.style.transform = `translateX(${width - x}px)`
+                    activeImg.style.transform = `translateX(${-x}px)`
+                    nextImg.style.transform = `translateX(${-width - x}px)`
+                }
+            })
+            aa.on('sliderFirstMove', () => {
+                if (isPure) {
+                    el.classList.remove("swiperFixedPure");
+                    isPure = false;
+                }
+                isTouching = true;
+                prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
+                activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
+                nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
+            })
+            aa.on('transitionStart', () => {
+                if (!isPure) {
+                    el.classList.add("swiperFixedMoving");
+                    isTouching = false;
+                    prevImg = el.getElementsByClassName("swiper-slide-prev")[0].children[0];
+                    activeImg = el.getElementsByClassName("swiper-slide-active")[0].children[0];
+                    nextImg = el.getElementsByClassName("swiper-slide-next")[0].children[0];
+                    prevImg.style.transform = 'translateX(100%)';
+                    activeImg.style.transform = 'translateX(0%)';
+                    nextImg.style.transform = 'translateX(-100%)';
+                }
+            })
+            aa.on('transitionEnd', function(){
+                if (!isPure) {
+                    el.classList.remove("swiperFixedMoving");
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
