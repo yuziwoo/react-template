@@ -23,47 +23,47 @@
 */
 
 html {
-    font-size: 0.625vw; /* == width 1920 기준 12px */
+    font-size: 0.520833334vw; /* == width 1920 기준 12px */
 }
 
 @media screen and (min-width: 1920px) {
-    html {
-        font-size: 12px;
-    }
+html {
+    font-size: 10px;
+}
 }
 
 html * {
-    font-size: 1.333333333333rem;
+font-size: 1.6rem;
 }
 .font72 {
-    font-size: 6rem;
+font-size: 7.2rem;
 }
 .font60 {
-    font-size: 5rem;
+font-size: 6rem;
 }
 .font48 {
-    font-size: 4rem;
+font-size: 4.8rem;
 }
 .font36 {
-    font-size: 3rem;
+font-size: 3.6rem;
 }
 .font24 {
-    font-size: 2rem;
+font-size: 2.4rem;
 }
 .font18 {
-    font-size: 1.5rem;
+font-size: 1.8rem;
 }
 .font14 {
-    font-size: 1.16666666666rem;
+font-size: 1.4rem;
 }
 .font12 {
-    font-size: 1rem;
+font-size: 1.2rem;
 }
 
 @media screen and (max-width: 1080px) {
-    html {
-        font-size: 1.1111112vw;
-    }
+html {
+    font-size: 0.925925vw;
+}
 }
 
 /* 텍스트 줄 제한 */
