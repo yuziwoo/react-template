@@ -16,6 +16,9 @@ export class JwLibrary {
         // 스크롤, 리사이즈 이벤트 생성
         this.bindScroll = this.scroll.bind(this);
         this.bindResize = this.resize.bind(this);
+
+        // 마우스 우클릭 방지
+        document.oncontextmenu = () => false;
     }
 
     getBrowser() {
