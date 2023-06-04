@@ -3,7 +3,7 @@ export class JwLibrary {
         this.device = ""; // mob, pc
         this.browser = ""; // Chorme, Firefox, Safari, Opera, Edge, Android, iPhone
 
-        this.body = document.getElementById("root");
+        this.body = document.body;
 
         this.getBrowser();
         this.body.classList.add(`device-${this.device}`);
@@ -44,6 +44,7 @@ export class JwLibrary {
 
         if (userAgent.match(/Android/i) || userAgent.match(/webOS/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPad/i) || userAgent.match(/iPod/i) || userAgent.match(/BlackBerry/i) || userAgent.match(/Windows Phone/i)) {
             this.device = "mob";
+            document.documentElement.style.fontSize = '0.925925vw';
         } else {
             this.device = "pc";
         }

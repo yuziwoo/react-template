@@ -44,7 +44,7 @@ console.log(jw.orientation); // landscpae(가로), portrait(세로)
 <br>
 
 2. **반응형 사이즈 CSS 규정.**
-- PC : max-width: 1920px; min-width: 768px;
+- PC : max-width: 1920px; min-width: 1080px;
 - MOB : max-width: 1080px;
 - PC 디자인은 1920px 기준이며 1rem을 10px로 지정하였습니다.
 > - 웹 최소 폰트 사이즈가 10px에 맞춘 반응형 최소 폰트사이즈는 1.8rem (18px)입니다.

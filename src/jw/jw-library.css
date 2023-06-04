@@ -7,17 +7,17 @@
 }
 
 /* 사이즈 규정 */ 
-/* 1. pc에선 min-width: 768px; */
+/* 1. pc에선 min-width: 1080px; */
 .device-pc {
     max-width: 1920px;
-    min-width: 768px;
+    min-width: 1080px;
 }
 .device-mob {
     max-width: 1080px;
 }
 
 /* 2. Font-size 규정 
-- PC 1rem 12px로 지정
+- PC 1rem 10px로 지정
 - MOB 디자인은 1080px 기준으로 1rem 10px 지정하여, 디자인 1080기준 48px이라면 4.8rem으로 설정해주세요.
 - 참고로 폰트 크기는 10px이 최소값이므로 PC 1920에선 최소 폰트사이즈를 18px, 모바일 1080에선 최소 폰트 사이즈를 38.4px로 그 이상 사이즈를 사용해주세요.
 */
@@ -27,9 +27,9 @@ html {
 }
 
 @media screen and (min-width: 1920px) {
-html {
-    font-size: 10px;
-}
+    html {
+        font-size: 10px;
+    }
 }
 
 html * {
@@ -61,10 +61,11 @@ font-size: 1.2rem;
 }
 
 @media screen and (max-width: 1080px) {
-html {
-    font-size: 0.925925vw;
+    html {
+        font-size: 5.66145px;
+    }
 }
-}
+/* Tip. 모바일 사이즈는 JS로 처리했습니다. */
 
 /* 텍스트 줄 제한 */
 .line-clamp1 {
