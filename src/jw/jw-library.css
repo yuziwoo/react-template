@@ -24,6 +24,7 @@
 
 html {
     font-size: 0.520833334vw; /* == width 1920 기준 10px */
+    overflow-x: scroll;
 }
 
 @media screen and (min-width: 1920px) {
